@@ -14,7 +14,7 @@ subrutina()
 print(a)
 
 # b)
-a = None # Para independizar del ejemplo a)
+del(a) # Para independizar del ejemplo a)
 print('b)')
 
 def subrutina():
