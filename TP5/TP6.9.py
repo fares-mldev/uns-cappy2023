@@ -53,20 +53,16 @@ def hoy():
 def calcular_edad(fecha):
     
     fecha_hoy=hoy()
-    edad_years= fecha_hoy[2]-fecha[2]
-    edad_months= fecha_hoy[1]-fecha[1]
-    edad_days= fecha_hoy[0]-fecha[0]
+    delta_years= fecha_hoy[2]-fecha[2]
+    delta_months= fecha_hoy[1]-fecha[1]
+    delta_days= fecha_hoy[0]-fecha[0]
 
-    if edad_years > 0:
-        edad = edad_years
-        if edad_months > 0:
-            edad = edad
-        elif edad_months < 0:
+    if delta_years > 0:
+        edad = delta_years
+        if delta_months < 0:
             edad -= 1
-        elif edad_months == 0:
-            if edad_days >= 0:
-                edad = edad 
-            else:
+        elif delta_months == 0:
+            if delta_days < 0:
                 edad -= 1
     else:
         edad = 0
@@ -80,7 +76,39 @@ def calcular_edad_promedio(fechas):
         suma += edad
     return suma / len(edades)
     
-print(f'c La edad promedio es: {calcular_edad_promedio(fechas)}')
+print(f'c) La edad promedio es: {calcular_edad_promedio(fechas)}')
 
 #d) El último y el primer cumpleaños del año
 
+def cumple_despues(f1,f2):
+    
+    if f1[1] > f2[1]:
+        return True
+    elif f1[1] == f2[1] and f1[0] > f2[0]:
+        return True
+    else:
+        return False
+
+def primer_cumple(fechas):
+    
+    primer=fechas[0]
+    
+    for fecha in fechas:
+        if cumple_despues(primer,fecha):
+            primer=fecha
+    
+    return primer
+
+def ultimo_cumple(fechas):
+    
+    ultimo=fechas[0]
+    
+    for fecha in fechas:
+        if cumple_despues(fecha,ultimo):
+            ultimo=fecha
+    
+    return ultimo
+
+print(f'd) El primer cumpleaños del año es {primer_cumple(fechas)} y el último es {ultimo_cumple(fechas)}')
+    
+    
