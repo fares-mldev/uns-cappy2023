@@ -43,8 +43,23 @@ print(f'El listado resultante es: {fechas}')
 
 # b) Ordenar la lista por orden cronológico. Implemente su propio algoritmo de ordenamiento.
 # https://arxiv.org/pdf/2110.01111.pdf
+def ordenar_fechas(l):
+    n=len(l)
+    for i in range(1,n):
+        for j in range(i):
+            if es_mas_joven(l[j],l[i]):
+                l[i], l[j] = l[j], l[i]
+    return l
 
-# for i = 1 to n do
-# for j = 1 to n do
-# if A[i] < A[j] then
-# swap A[i] and A[j]
+fechas=[( 10, 1,1981),
+        (20, 2,2008),
+        ( 9,12,1976),
+        ( 9, 1,1981),
+        (22, 3,2011),
+        ( 10, 5,1981),
+        (20, 3,2008),
+        (19, 2,2008)]
+
+print('b) Ordenar la lista por orden cronológico. Implemente su propio algoritmo de ordenamiento.')
+print(f'Las fechas desordenadas: {fechas}')
+print(f'Las fechas ordenadas: {ordenar_fechas(fechas)}')
