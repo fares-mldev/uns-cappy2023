@@ -24,6 +24,7 @@ for p,c in sorted(diccionario.items()):
     print(p,c)
 
 print(type(diccionario.keys()))
+
 # Librerias NLP
 #nltk
 #beautiful soup
