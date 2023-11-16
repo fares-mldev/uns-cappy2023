@@ -1,2 +1,2 @@
-## activate environment
-. env/bin/activate
+# uns-cappy2023
+Curso Avanzado de Python 2023 UNS

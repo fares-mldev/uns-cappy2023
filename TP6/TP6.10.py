@@ -92,4 +92,4 @@ for continente , paises_continente in continentes.items():
         max_cant_paises_porc_agua_gt1 = cant_paises_porc_agua_gt1
         continente_max_cant_paises_porc_agua_gt1 = continente
     
-print(f'c) El continente con más países con mayor porcentaje de agua mayor a 1 es: {continente_max_cant_paises_porc_agua_gt1} con {max_cant_paises_porc_agua_gt1} paises')
+print(f'c) El continente con más países con porcentaje de agua mayor a 1% es: {continente_max_cant_paises_porc_agua_gt1} con {max_cant_paises_porc_agua_gt1} paises')
